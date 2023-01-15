@@ -1,9 +1,11 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Layout/Navbar";
 import ProtectedRoute from "./components/protected/protectedRoute";
 import SuperAdminRoute from "./components/protected/superAdminRoute";
 import Provider from "./state/Provider";
-const Home = lazy(() => import("./components/home"));
+const Home = lazy(() => import("./components/Pages/home"));
+const Mandir = lazy(() => import("./components/Pages/mandir"));
 const AllBhajans = lazy(() => import("./components/bhajans/getAllBhajans"));
 const Bhajan = lazy(() => import("./components/bhajans/getOneBhajan"));
 const Signup = lazy(() => import("./components/auth/signup"));
@@ -25,9 +27,11 @@ const App = () => {
 			{/* Import loading page instead of the div with loading text */}
 			<Suspense fallback={<div>Loading ...</div>}>
 				<BrowserRouter>
+				<Navbar/>
 					<Provider>
 						<Routes>
 							<Route path="/" element={<Home />} />
+							<Route path="/mandir" element={<Mandir />} />
 							<Route path="/bhajans" element={<AllBhajans />} />
 							<Route path="/bhajan/:id" element={<Bhajan />} />
 							<Route path="/signup" element={<Signup />} />

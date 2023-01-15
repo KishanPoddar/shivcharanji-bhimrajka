@@ -36,6 +36,8 @@ const CreateBhajan = () => {
 	};
 
 	return (
+		<>
+		<h1>hello</h1>
 		<form onSubmit={handleBhajanCreation}>
 			<div>
 				Title :
@@ -84,6 +86,8 @@ const CreateBhajan = () => {
 			{values.image && <img src={values.image} alt="bhajan image" width={100} />}
 			<button type="submit">Create</button>
 		</form>
+
+		</>
 	);
 };
 
