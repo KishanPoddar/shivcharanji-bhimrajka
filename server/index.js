@@ -6,8 +6,8 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 
 require("./database/database");
-const app = require("./app");
 
 const port = process.env.PORT || 4000;
 
+const app = require("./app");
 app.listen(port, () => console.log(`Listening on http://localhost:${port}/`));

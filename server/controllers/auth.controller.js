@@ -66,7 +66,7 @@ const forgotPassword = catchAsyncErrors(async (req, res, next) => {
 	const user = await User.findOne({ email });
 	if (!user) {
 		return next(
-			new ErrorHandler("User with this e-mail ID is not present in our database", 404),
+			new ErrorHandler("User with this e-mail ID is not present", 404),
 		);
 	}
 

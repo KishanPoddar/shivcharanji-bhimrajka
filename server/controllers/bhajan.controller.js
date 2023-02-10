@@ -30,7 +30,7 @@ const createBhajan = catchAsyncErrors(async (req, res, next) => {
 
 	const bhajan = await Bhajan.create(requestBodyObject);
 	if (!bhajan) {
-		return next(new ErrorHandler("Unable to create user", 500));
+		return next(new ErrorHandler("Unable to create bhajan", 500));
 	}
 
 	res.status(201).json({
