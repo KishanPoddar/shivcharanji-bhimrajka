@@ -5,7 +5,7 @@ import ProtectedRoute from "./components/protected/protectedRoute";
 import SuperAdminRoute from "./components/protected/superAdminRoute";
 import Provider from "./state/Provider";
 const Home = lazy(() => import("./components/Pages/Home"));
-const Mandir = lazy(() => import("./components/Pages/mandir"));
+const Mandir = lazy(() => import("./components/Pages/Mandir"));
 const AllBhajans = lazy(() => import("./components/bhajans/getAllBhajans"));
 const Bhajan = lazy(() => import("./components/bhajans/getOneBhajan"));
 const Signup = lazy(() => import("./components/auth/signup"));

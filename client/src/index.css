@@ -2,3 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button{
+    @apply text-white bg-teal-600 py-2 px-3 rounded-lg cursor-pointer text-base;
+}
+
+.loginRegisterInput{
+    @apply mb-3 p-3 bg-white border-none rounded-xl text-base;
+}
+
+.loginRegisterLink{
+    @apply text-sm text-gray-300 underline underline-offset-1;
+}

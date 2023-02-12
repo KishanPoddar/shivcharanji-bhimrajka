@@ -33,24 +33,40 @@ const Login = () => {
 	};
 
 	return (
-		<form onSubmit={handleSignup}>
-			<input
-				type="email"
-				name="email"
-				value={values.email}
-				onChange={handleChange}
-				placeholder="E-mail"
-			/>
-			<input
-				type="password"
-				name="password"
-				value={values.password}
-				onChange={handleChange}
-				placeholder="Password"
-			/>
-			<button type="submit">Login</button>
-			<Link to="/forgot-password">Forgot-password</Link>
-		</form>
+		<>
+		<div className="h-[94vh] w-full bg-gradient-to-r from-cyan-500 to-blue-500 overflow-hidden">
+			<div className="mt-[12vh] flex flex-col items-center">
+				<span className="text-7xl font-lora font-semibold">Login</span>
+				<form onSubmit={handleSignup} className="mt-3 flex flex-col font-varela-round text-lg sm:w-90 w-72">
+					<label className="mt-2">Email</label>
+					<input
+						type="email"
+						name="email"
+						value={values.email}
+						onChange={handleChange}
+						placeholder="Enter your Email..."
+						className="loginRegisterInput"
+					/>
+					<label className="">Password</label>
+					<input
+						type="password"
+						name="password"
+						value={values.password}
+						onChange={handleChange}
+						className="loginRegisterInput"
+						placeholder="Enter your password..."
+					/>
+					<button type="submit" className=" mt-3 button !bg-lightcoral">
+						Login
+					</button>
+					<div className="flex justify-between mt-5 mx-3">
+						<Link to="/signup" className="loginRegisterLink">Signup!</Link>
+						<Link to="/forgot-password" className="loginRegisterLink">Forgot Password?</Link>
+					</div>
+				</form>
+			</div>
+		</div>
+		</>
 	);
 };
 

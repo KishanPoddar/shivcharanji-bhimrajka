@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="w-full h-14 pt-2 top-0 sticky flex items-center font-josefin-sans font-light z-[999]">
+            <div className="w-full h-14 pt-2 top-0 flex items-center font-josefin-sans font-light z-[999]">
                 <div className="basis-1/5 flex justify-start">
                     <div onClick={() => setOpen(!open)} className={`z-[999] justify-end ${ open ? "text-gray-500" : "text-gray-900"} text-2xl sm:hidden mx-4`}>
                         <RxHamburgerMenu />
@@ -57,7 +57,7 @@ const Navbar = () => {
                 </div>
 
             </div>
-            <div className={`${search?"visible":"invisible"} w-[97%] mx-auto top-16`}>
+            <div className={`${search?"visible":"hidden"} w-[97%] mx-auto top-16 sm:hidden`}>
                 <button className="w-full left-0" type="submit">
                     <div className="border-2 border-black rounded-lg px-2.5">
                         <input type="text" placeholder="Search.." name="search" className="outline-none text-sm w-full h-8 font-serif" />
