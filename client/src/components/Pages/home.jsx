@@ -1,16 +1,21 @@
-import { Link } from "react-router-dom";
-import img1 from "../../Assets/4.jpeg"
-import img2 from "../../Assets/3.jpeg"
+// import { Link } from "react-router-dom";
+// import img1 from "../../Assets/4.jpeg"
+// import img2 from "../../Assets/3.jpeg"
+// import logo from "../../Assets/logo.jpg";
+
 const Home = () => {
-	return (
-		<>
-      <div className="container"></div>
+  return (
+    <>
+    <div className="h-screen invisible bg-red-500">Home</div>
+    <div className="h-screen bg-red-500">Home</div>
+    
+      {/* <div className="container"></div>
       <div className="sewakBackground">
         <h1 className="main">Sewak</h1>
         
         <section className="about-bhakts">
           <div className="pic-right">
-            {/* <Image src="/Photos/4.jpeg" alt="Shyam Bahadur ji photo" height={440} width={340} /> */}
+            <Image src="/Photos/4.jpeg" alt="Shyam Bahadur ji photo" height={440} width={340} />
             <img src={img1} alt="Shyam Bahadur ji photo" />
           </div>
           <div className="text text-right">
@@ -54,7 +59,7 @@ const Home = () => {
             </p>
           </div>
           <div className="pic-right shyamBahadurJi">
-            {/* <Image src="/Photos/3 - Copy.jpeg" alt="Shyam Bahadur ji photo" height={440} width={375}/> */}
+            <Image src="/Photos/3 - Copy.jpeg" alt="Shyam Bahadur ji photo" height={440} width={375}/>
             <img src={img2} alt="Shyam Bahadur ji photo" />
           </div>
         </section>
@@ -78,9 +83,9 @@ const Home = () => {
         <div className="copyright">
           Copyright &copy; www.ShyamBaba.com
         </div>
-      </footer>
+      </footer> */}
     </>
-	);
-};
+  )
+}
 
-export default Home;
+export default Home

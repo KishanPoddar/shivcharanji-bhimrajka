@@ -17,7 +17,7 @@ router.route("/all").get(auth, isAdmin("admin", "super-admin"), getAllUsers);
 router.route("/role/:id").put(auth, isAdmin("super-admin"), updateUserRole);
 router.route("/").get(auth, getOneUser).put(auth, updateUser).delete(auth, deleteUser);
 // admin users
-router.route("/delete/:id").delete(auth, adminDeleteUser);
+router.route("/delete/:id").delete(auth, isAdmin("super-admin"), adminDeleteUser);
 router.route("/total").get(auth, isAdmin("admin", "super-admin"), getTotalUsers);
 router.route("/:id").get(auth, isAdmin("admin", "super-admin"), adminGetOneUser);
 

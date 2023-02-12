@@ -4,7 +4,7 @@ import Navbar from "./components/Layout/Navbar";
 import ProtectedRoute from "./components/protected/protectedRoute";
 import SuperAdminRoute from "./components/protected/superAdminRoute";
 import Provider from "./state/Provider";
-const Home = lazy(() => import("./components/Pages/home"));
+const Home = lazy(() => import("./components/Pages/Home"));
 const Mandir = lazy(() => import("./components/Pages/mandir"));
 const AllBhajans = lazy(() => import("./components/bhajans/getAllBhajans"));
 const Bhajan = lazy(() => import("./components/bhajans/getOneBhajan"));

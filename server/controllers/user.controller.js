@@ -54,6 +54,14 @@ const updateUser = catchAsyncErrors(async (req, res, next) => {
 	});
 });
 
+const deleteUser = catchAsyncErrors(async (req, res, next) => {
+	const id = res.locals.user.id;
+	await User.findByIdAndDelete(id);
+	res.clearCookie("shiv_charan_ji_bhim_raj_ka");
+	res.status(200).json({ success: true, message: "User deleted successfully" });
+});
+
+
 // admin route
 const updateUserRole = catchAsyncErrors(async (req, res, next) => {
 	const { id } = req.params;
@@ -82,14 +90,7 @@ const getTotalUsers = catchAsyncErrors(async (req, res, next) => {
 		totalUsers,
 	});
 });
-
-const deleteUser = catchAsyncErrors(async (req, res, next) => {
-	const id = res.locals.user.id;
-	await User.findByIdAndDelete(id);
-	res.clearCookie("shiv_charan_ji_bhim_raj_ka");
-	res.status(200).json({ success: true, message: "User deleted successfully" });
-});
-
+	
 const adminGetOneUser = catchAsyncErrors(async (req, res, next) => {
 	const { id } = req.params;
 
@@ -110,7 +111,7 @@ const adminDeleteUser = catchAsyncErrors(async (req, res, next) => {
 	await User.findByIdAndDelete(id);
 	res.status(200).json({ success: true, message: "User deleted successfully" });
 });
-
+	
 module.exports = {
 	getOneUser,
 	getAllUsers,
