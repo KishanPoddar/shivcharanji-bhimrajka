@@ -46,45 +46,14 @@ const Signup = () => {
     };
 
     return (
-        // <form onSubmit={handleSignup}>
-        // 	<input
-        // 		type="text"
-        // 		name="name"
-        // 		value={values.name}
-        // 		onChange={handleChange}
-        // 		placeholder="Name"
-        // 	/>
-        // 	<input
-        // 		type="email"
-        // 		name="email"
-        // 		value={values.email}
-        // 		onChange={handleChange}
-        // 		placeholder="E-mail"
-        // 	/>
-        // 	<input
-        // 		type="password"
-        // 		name="password"
-        // 		value={values.password}
-        // 		onChange={handleChange}
-        // 		placeholder="Password"
-        // 	/>
-        // 	<input
-        // 		type="password"
-        // 		name="confirmPassword"
-        // 		value={values.confirmPassword}
-        // 		onChange={handleChange}
-        // 		placeholder="Confirm Password"
-        // 	/>
-        // 	<button type="submit">Signup</button>
-        // </form>
         <>
             <div className="h-[94vh] w-full bg-gradient-to-r from-cyan-500 to-blue-500 overflow-hidden">
                 <div className="sm:mt-[12vh] mt-[7vh] flex flex-col items-center">
                     <span className="text-7xl font-lora font-semibold">
                         Sign-Up
                     </span>
-                    <form onSubmit={handleSignup} className="mt-3 flex flex-col font-varela-round text-lg sm:w-90 w-72">
-                        <label className="mt-1">Name</label>
+                    <form onSubmit={handleSignup} className="mt-3 flex flex-col font-varela-round text-lg sm:w-96 w-72">
+                        <label className="mt-1">Name:</label>
                         <input
                             type="text"
 							name="name"
@@ -94,7 +63,7 @@ const Signup = () => {
                             placeholder="Enter your name..."
                         />
 
-                        <label className="mt-1">Email</label>
+                        <label className="mt-1">Email:</label>
                         <input
                             type="email"
                             name="email"
@@ -104,7 +73,7 @@ const Signup = () => {
                             className="loginRegisterInput"
                         />
 
-                        <label className="mt-1">Password</label>
+                        <label className="mt-1">Password:</label>
                         <input
                             type="password"
                             name="password"
@@ -114,7 +83,7 @@ const Signup = () => {
                             placeholder="Enter your password..."
                         />
 
-                        <label className="mt-1">Confirm Password</label>
+                        <label className="mt-1">Confirm Password:</label>
                         <input
                             type="password"
                             name="confirmPassword"

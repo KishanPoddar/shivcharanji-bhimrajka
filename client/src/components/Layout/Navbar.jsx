@@ -17,7 +17,7 @@ const Navbar = () => {
         <>
             <div className="w-full h-14 pt-2 top-0 flex items-center font-josefin-sans font-light z-[999]">
                 <div className="basis-1/5 flex justify-start">
-                    <div onClick={() => setOpen(!open)} className={`z-[999] justify-end ${ open ? "text-gray-500" : "text-gray-900"} text-2xl sm:hidden mx-4`}>
+                    <div onClick={() => setOpen(!open)} className={`z-[999] justify-end ${ open ? "text-gray-500" : "text-gray-900"} text-2xl lg:hidden mx-4`}>
                         <RxHamburgerMenu />
                     </div>
                 </div>
