@@ -6,7 +6,6 @@ import SuperAdminRoute from "./components/protected/superAdminRoute";
 import Provider from "./state/Provider";
 const Home = lazy(() => import("./components/Pages/Home"));
 const Mandir = lazy(() => import("./components/Pages/Mandir"));
-const AllBhajans = lazy(() => import("./components/bhajans/getAllBhajans"));
 const Bhajan = lazy(() => import("./components/bhajans/getOneBhajan"));
 const Signup = lazy(() => import("./components/auth/signup"));
 const Login = lazy(() => import("./components/auth/login"));
@@ -32,7 +31,6 @@ const App = () => {
 						<Routes>
 							<Route path="/" element={<Home />} />
 							<Route path="/mandir" element={<Mandir />} />
-							<Route path="/bhajans" element={<AllBhajans />} />
 							<Route path="/bhajan/:id" element={<Bhajan />} />
 							<Route path="/signup" element={<Signup />} />
 							<Route path="/login" element={<Login />} />

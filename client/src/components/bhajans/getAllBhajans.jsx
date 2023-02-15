@@ -1,45 +1,40 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getRequest } from "../../utils/requests";
+import img from "../../Assets/logo.jpg"
 
 const GetAllBhajans = () => {
-	const [bhajans, setBhajans] = useState([]);
+    const [bhajans, setBhajans] = useState([]);
 
-	const getAllBhajans = async () => {
-		const data = await getRequest("/bhajan/all");
-		if (data.success) {
-			setBhajans(data.bhajans);
-		} else {
-			window.alert(data.message);
-		}
-	};
+    const getAllBhajans = async () => {
+        const data = await getRequest("/bhajan/all");
+        if (data.success) {
+            setBhajans(data.bhajans);
+        } else {
+            window.alert(data.message);
+        }
+    };
 
-	useEffect(() => {
-		getAllBhajans();
-	}, []);
+    useEffect(() => {
+        getAllBhajans();
+        
+    }, []);
 
-	return (
-		<div>
-			{bhajans.map((bhajan, idx) => (
-				<div key={idx}>
-					<h1>
-						{idx + 1}. {bhajan.title}
-					</h1>
-					<Link to={`/bhajan/${bhajan._id}`}>Go to bhajan</Link>
-					<p>{bhajan.tarj}</p>
-					<p>{bhajan.doha}</p>
-					<p>{bhajan.image}</p>
-					{bhajan?.bhajanLyrics?.map((lyrics, idx) => (
-						<li key={idx}>{lyrics}</li>
-					))}
-				</div>
-			))}
-		</div>
-		// <>
-		// <div>hello</div>
-		// </>
-
-	);
+    return (
+        <>
+            <div className="flex flex-wrap justify-center">
+                {bhajans.map((bhajan, idx) => (
+                    <Link key={idx} to={`/bhajan/${bhajan._id}`}>
+                        <div className="lg:w-96 lg:h-96 w-72 h-72 bg-red-600 m-4 rounded-xl flex flex-col justify-center items-center">
+                            {/* <p>{bhajan.image}</p> */}
+                            <img src={img} alt="" className="h-5/6 w-full rounded-t-xl object-cover "/> {/* if we want to show the image from the top then use this property object-top*/}
+                            <h1 className="h-1/6 flex justify-center items-center font-sans">{bhajan.title}</h1>
+                        </div>
+                    </Link>
+                ))}
+            </div>
+        </>
+    );
 };
 
 export default GetAllBhajans;
