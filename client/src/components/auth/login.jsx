@@ -41,7 +41,7 @@ const Login = () => {
                     </span>
                     <form
                         onSubmit={handleSignup}
-                        className="mt-3 flex flex-col font-varela-round text-lg sm:w-90 w-72"
+                        className="mt-3 flex flex-col font-varela-round text-lg sm:w-96 w-72"
                     >
                         <label className="mt-2">Email:</label>
                         <input

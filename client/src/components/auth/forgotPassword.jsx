@@ -22,8 +22,8 @@ const ForgotPassword = () => {
 	return (
 		<>
             <div className="h-[94vh] w-full bg-gradient-to-r from-cyan-500 to-blue-500 overflow-hidden">
-                <div className="mt-[12vh] flex flex-col items-center">
-                    <span className="sm:text-7xl text-5xl font-lora font-semibold">
+                <div className="sm:mt-[12vh] mt-[7vh] flex flex-col items-center">
+                    <span className="sm:text-7xl text-[2.75rem] font-lora font-semibold">
                         Forgot Password
                     </span>
                     <form onSubmit={handleForgotPassword} className="mt-3 flex flex-col font-varela-round text-lg sm:w-96 w-72">

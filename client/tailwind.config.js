@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screen:{
+      screens:{
         'xs': '540px',
       },
       fontFamily: {
@@ -22,6 +22,7 @@ module.exports = {
         'drak-gray': '#a7a4a4',
         'be9656': '#be9656',
         'lightcoral': '#f06969 ',
+        'lightblack': '#000000bd',
       },
     },
   },
