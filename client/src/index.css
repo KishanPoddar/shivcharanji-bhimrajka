@@ -3,15 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.button{
+.button {
     @apply text-white bg-teal-600 py-2 px-3 rounded-lg cursor-pointer text-base;
 }
 
-.loginRegisterInput{
+.loginRegisterInput {
     @apply mb-3 p-3 bg-white border-none rounded-xl text-base;
 }
 
-.loginRegisterLink{
+.loginRegisterLink {
     @apply text-sm text-gray-300 underline underline-offset-1;
 }
 
@@ -22,4 +22,19 @@
     width: 100vw;
     z-index: -1;
     top: 0px;
-  }
+}
+
+.borderBottom {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.89);
+    transition: all 0.15s ease-in;
+    margin: 10px 0px;
+    padding: 20px 0px 14px 0px;
+    @apply cursor-pointer text-center text-xl font-lora font-medium;
+
+}
+
+.borderBottom:hover,.activeLink {
+    /* font-size: 1.4rem; */
+    box-shadow: inset 0px 0px 20px 10px #e99520a8;
+    border-radius: 25px;
+}

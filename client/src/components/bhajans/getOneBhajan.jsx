@@ -32,11 +32,11 @@ const GetOneBhajan = () => {
             ) : bhajan ? (
                 <div className="back before:bg-teal-200">
                     <div className="flex xl:flex-row flex-col items-center xl:items-start xl:px-10 px-1 py-6">
-                        <div onMouseEnter={()=>{setVisible(true)}} onMouseLeave={()=>{setVisible(false)}} className="xl:w-[50rem] flex justify-end mt-4">
+                        <div onMouseEnter={()=>{setVisible(true)}} onMouseLeave={()=>{setVisible(false)}} className="xl:w-[50rem] flex justify-end">
                             <img
                                 src={img} //{bhajan.image}
                                 alt=""
-                                className="w-full h-[50rem] rounded-3xl xl:pl-10 p-4 relative left-8"
+                                className="w-full sm:h-[50rem] h-[80vh] rounded-3xl xl:pl-10 px-4 py-2 relative left-8"
                             />
                             <a href={img} download className={`relative right-8 top-7 ${visible?"lg:visible":"lg:invisible"} visible `}>
                                 <HiOutlineDownload className="h-10 w-10 p-1 text-white bg-lightblack rounded-xl" />
@@ -45,13 +45,13 @@ const GetOneBhajan = () => {
 
                         <div className="w-full">
                             <div className="flex justify-center">
-                                <div className="flex flex-col items-center xl:mt-4 mt-24 mb-7">
-                                    <h1 className="sm:text-5xl xs:text-4xl text-3xl font-bold sm:font-normal">{bhajan.title}</h1>
-                                    <p className="text-base font-semibold sm:font-normal">( {bhajan.tarj} ) </p>
-                                    <p className="sm:text-2xl xs:text-xl text-lg mt-7 ">{bhajan.doha}</p>
+                                <div className="flex flex-col items-center xl:mt-5 mt-16 mb-7">
+                                    <h1 className="sm:text-5xl xs:text-4xl text-2xl font-bold sm:font-normal">{bhajan.title}</h1>
+                                    <p className="xs:text-base text-sm font-normal">( {bhajan.tarj} ) </p>
+                                    <p className="sm:text-2xl xs:text-xl text-lg mt-7 font-bold xs:font-normal">{bhajan.doha}</p>
                                     <br />
                                     {bhajan?.lyrics?.map((lyrics, idx) => (
-                                        <li key={idx} className="list-none sm:text-2xl xs:text-xl text-lg !leading-10" >{lyrics?lyrics:<br/>}</li>
+                                        <li key={idx} className="list-none sm:text-2xl xs:text-xl text-sm !leading-10 font-bold xs:font-normal" >{lyrics?lyrics:<br/>}</li>
                                     ))}
                                 </div>
                             </div>

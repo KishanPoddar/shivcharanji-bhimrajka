@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       screens:{
         'xs': '540px',
+        'medium': '1400px'
       },
       fontFamily: {
         'josefin-sans': ['Josefin Sans', 'sans-serif'],
