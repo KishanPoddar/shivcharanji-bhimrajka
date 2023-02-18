@@ -24,17 +24,21 @@
     top: 0px;
 }
 
-.borderBottom {
+.bhajanCategoryDesktop {
     border-bottom: 2px solid rgba(0, 0, 0, 0.89);
     transition: all 0.15s ease-in;
     margin: 10px 0px;
     padding: 20px 0px 14px 0px;
     @apply cursor-pointer text-center text-xl font-lora font-medium;
+}
+
+.bhajanCategoryMobile{
+    @apply cursor-pointer text-center text-lg font-lora font-medium my-2 pt-2;
 
 }
 
-.borderBottom:hover,.activeLink {
-    /* font-size: 1.4rem; */
+.bhajanCategoryDesktop:hover,.activeLink {
+    /* @apply text-2xl; */
     box-shadow: inset 0px 0px 20px 10px #e99520a8;
     border-radius: 25px;
 }
