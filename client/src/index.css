@@ -24,6 +24,10 @@
     top: 0px;
 }
 
+.lyricsStyle{
+    @apply sm:text-2xl xs:text-xl text-sm !leading-10 font-bold xs:font-normal;
+}
+
 .bhajanCategoryDesktop {
     border-bottom: 2px solid rgba(0, 0, 0, 0.89);
     transition: all 0.15s ease-in;

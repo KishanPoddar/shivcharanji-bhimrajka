@@ -47,11 +47,13 @@ const GetOneBhajan = () => {
                             <div className="flex justify-center">
                                 <div className="flex flex-col items-center xl:mt-5 mt-16 mb-7">
                                     <h1 className="sm:text-5xl xs:text-4xl text-2xl font-bold sm:font-normal">{bhajan.title}</h1>
-                                    <p className="xs:text-base text-sm font-normal">( {bhajan.tarj} ) </p>
-                                    <p className="sm:text-2xl xs:text-xl text-lg mt-7 font-bold xs:font-normal">{bhajan.doha}</p>
+                                    <p className="xs:text-base text-sm font-normal mb-5">( {bhajan.tarj} ) </p>
+                                    {bhajan?.doha?.map((doha,i)=>(
+                                        <p key={i} className="lyricsStyle" >{doha}</p>
+                                    ))}
                                     <br />
                                     {bhajan?.lyrics?.map((lyrics, idx) => (
-                                        <li key={idx} className="list-none sm:text-2xl xs:text-xl text-sm !leading-10 font-bold xs:font-normal" >{lyrics?lyrics:<br/>}</li>
+                                        <p key={idx} className="lyricsStyle" >{lyrics?lyrics:<br/>}</p>
                                     ))}
                                 </div>
                             </div>

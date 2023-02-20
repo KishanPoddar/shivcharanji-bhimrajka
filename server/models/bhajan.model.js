@@ -4,7 +4,8 @@ const bhajanSchema = new Schema(
 	{
 		title: { type: String, required: true },
 		tarj: { type: String, default: "" },
-		doha: { type: String, default: "" },
+		doha: [{ type: String }],
+		category: { type: String, default: "" },
 		lyrics: [{ type: String }],
 		image: { type: String, default: "" },
 		image_public_url: { type: String, default: "" },

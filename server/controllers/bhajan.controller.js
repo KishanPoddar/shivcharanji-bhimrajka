@@ -5,7 +5,13 @@ const cloudinary = require("../utils/cloudinaryConfig");
 
 const createBhajan = catchAsyncErrors(async (req, res, next) => {
 	const requestBodyObject = req.body;
-	const { title, lyrics, image } = requestBodyObject;
+	const { title, lyrics, doha, image } = requestBodyObject;
+
+	if (doha?.length) {
+		let newDoha = doha.split("\n");
+		newDoha = newDoha.filter(doha => doha.length);
+		requestBodyObject.doha = newDoha;
+	}
 
 	if (lyrics?.length) {
 		let newLyrics = lyrics.split("\n");
@@ -78,11 +84,17 @@ const getTotalBhajans = catchAsyncErrors(async (req, res, next) => {
 const updateBhajan = catchAsyncErrors(async (req, res, next) => {
 	const requestBodyObject = req.body;
 	const { id } = req.params;
-	const { lyrics, image } = requestBodyObject;
+	const { lyrics, doha, image } = requestBodyObject;
 
 	const previousBhajan = await Bhajan.findById(id);
 	if (!previousBhajan) {
 		return next(new ErrorHandler("Bhajan not found", 404));
+	}
+	
+	if (doha?.length) {
+		let newDoha = doha.split("\n");
+		newDoha = newDoha.filter(doha => doha.length);
+		requestBodyObject.doha = newDoha;
 	}
 
 	if (lyrics?.length) {
