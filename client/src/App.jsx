@@ -30,14 +30,14 @@ const App = () => {
 					<Provider>
 						<Routes>
 							<Route path="/" element={<Home />} />
-							<Route path="/mandir" element={<Mandir />} />
 							<Route path="/bhajan/:id" element={<Bhajan />} />
+							<Route path="/mandir" element={<Mandir />} />
 							<Route path="/signup" element={<Signup />} />
 							<Route path="/login" element={<Login />} />
 							<Route path="/forgot-password" element={<ForgotPassword />} />
 							<Route path="/reset-password/:id" element={<ResetPassword />} />
-							<Route path="user" element={<ProtectedRoute />}> {/* User protected routes */}
-								<Route path="update" element={<UpdateUser />} />
+							<Route element={<ProtectedRoute />}> {/* User protected routes */}
+								<Route path="/user/update" element={<UpdateUser />} />
 								<Route path="update" element={<UserDetails />} />
 							</Route>
 							<Route path="admin" element={<ProtectedRoute />}> {/* Admin protected routes */}

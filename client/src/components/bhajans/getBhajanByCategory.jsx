@@ -4,7 +4,6 @@ import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 
 const GetBhajanByCategory = () => {
     const [open, setOpen] = useState(false);
-    // const [activeBhajan, setActiveBhajan] = useState("second")
     const categoryLinks = [
         { name: "Shyam Bhajan", link: "/" },
         { name: "Shiv Bhajan", link: "/" },

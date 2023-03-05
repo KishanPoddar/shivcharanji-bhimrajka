@@ -1,7 +1,8 @@
-;const User = require("../models/user.model");
+const User = require("../models/user.model");
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const ErrorHandler = require("../utils/ErrorHandler");
 const validateEmail = require("../utils/validateEmail");
+const checkUserRoles = require("../utils/checkUserRoles");
 
 const getOneUser = catchAsyncErrors(async (req, res, next) => {
 	const user = res.locals.user;
@@ -41,11 +42,13 @@ const updateUser = catchAsyncErrors(async (req, res, next) => {
 			return next(new ErrorHandler("E-mail format incorrect", 400));
 		}
 	}
-
-	const user = await User.findByIdAndUpdate(id, requestBodyObject, { new: true });
+	const user = await User.findById(id);
 	if (!user) {
 		return next(new ErrorHandler("Unable to update user", 500));
 	}
+	user.email = requestBodyObject.email;
+	user.name = requestBodyObject.name;
+	await user.save();
 
 	res.status(200).json({
 		success: true,
@@ -68,7 +71,8 @@ const updateUserRole = catchAsyncErrors(async (req, res, next) => {
 	const { role } = req.body;
 
 	const user = await User.findById(id);
-	if ((user.role === "user" && role === "admin") || (user.role === "admin" && role === "user")) {
+	// if ((user.role === "user" && role === "admin") || (user.role === "admin" && role === "user")) {
+	if (checkUserRoles(user.role, role)) {
 		user.role = role;
 		await user.save();
 
@@ -90,7 +94,7 @@ const getTotalUsers = catchAsyncErrors(async (req, res, next) => {
 		totalUsers,
 	});
 });
-	
+
 const adminGetOneUser = catchAsyncErrors(async (req, res, next) => {
 	const { id } = req.params;
 
@@ -111,7 +115,7 @@ const adminDeleteUser = catchAsyncErrors(async (req, res, next) => {
 	await User.findByIdAndDelete(id);
 	res.status(200).json({ success: true, message: "User deleted successfully" });
 });
-	
+
 module.exports = {
 	getOneUser,
 	getAllUsers,

@@ -37,10 +37,14 @@
 }
 
 .bhajanCategoryMobile{
-    @apply cursor-pointer text-center text-lg font-lora font-medium my-2 pt-2;
-
+    @apply cursor-pointer text-center text-lg font-lora font-medium my-2 pt-2 w-full;
+    border-bottom: 1px solid black;
 }
 
+.bhajanCategoryMobile:last-child{
+    border-bottom: none;
+}
+    
 .bhajanCategoryDesktop:hover,.activeLink {
     /* @apply text-2xl; */
     box-shadow: inset 0px 0px 20px 10px #e99520a8;

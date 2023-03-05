@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children }) => {
 		const data = await getRequest("/user");
 		if (!data.success) {
 			setUser(null);
-			navigate("/");
+			navigate("/login");
 		} else {
 			setUser(data.user);
 		}
