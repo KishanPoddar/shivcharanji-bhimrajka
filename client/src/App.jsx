@@ -29,7 +29,9 @@ const App = () => {
 				<Navbar/>
 					<Provider>
 						<Routes>
-							<Route path="/" element={<Home />} />
+							<Route path="/" element={<Home />} >
+								<Route path="category/:id" element={<Home />} />
+							</Route>
 							<Route path="/bhajan/:id" element={<Bhajan />} />
 							<Route path="/mandir" element={<Mandir />} />
 							<Route path="/signup" element={<Signup />} />

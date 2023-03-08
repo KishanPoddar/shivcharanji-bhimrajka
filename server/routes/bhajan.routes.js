@@ -3,6 +3,7 @@ const {
 	createBhajan,
 	deleteBhajan,
 	getAllBhajans,
+	getAllCategoryBhajans,
 	getBhajan,
 	updateBhajan,
 	getTotalBhajans,
@@ -13,6 +14,7 @@ const router = Router();
 
 router.route("/create").post(auth, isAdmin("admin", "master-admin", "super-admin"), createBhajan);
 router.route("/all").get(getAllBhajans);
+router.route("/category/:id").get(getAllCategoryBhajans);
 router.route("/total").get(auth, isAdmin("master-admin", "super-admin"), getTotalBhajans);
 router
 	.route("/:id")

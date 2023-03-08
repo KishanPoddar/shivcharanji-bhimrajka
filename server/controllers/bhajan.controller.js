@@ -72,6 +72,22 @@ const getAllBhajans = catchAsyncErrors(async (req, res, next) => {
 	});
 });
 
+const getAllCategoryBhajans = catchAsyncErrors(async (req, res, next) => {
+	const { id } = req.params;
+	const bhajans = await Bhajan.find({category: id});
+	if (!bhajans) {
+		return next(new ErrorHandler("Unable to load bhajans", 500));
+	}
+	const totalBhajans = bhajans.length;
+
+	res.status(200).json({
+		success: true,
+		message: "Fetched all bhajans successfully",
+		totalBhajans,
+		bhajans,
+	});
+});
+
 const getTotalBhajans = catchAsyncErrors(async (req, res, next) => {
 	const totalBhajans = await Bhajan.count();
 	res.status(200).json({
@@ -144,6 +160,7 @@ module.exports = {
 	updateBhajan,
 	getBhajan,
 	getAllBhajans,
+	getAllCategoryBhajans,
 	deleteBhajan,
 	getTotalBhajans,
 };

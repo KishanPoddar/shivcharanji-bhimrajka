@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getRequest } from "../../utils/requests";
 import img from "../../Assets/logo.jpg"
 
 const GetAllBhajans = () => {
     const [bhajans, setBhajans] = useState([]);
+    let params = useParams();
 
     const getAllBhajans = async () => {
-        const data = await getRequest("/bhajan/all");
+        const data = await getRequest((params && params.id ) ? `/bhajan/category/${params.id}` : `/bhajan/all`);
         if (data.success) {
             setBhajans(data.bhajans);
         } else {
@@ -17,12 +18,11 @@ const GetAllBhajans = () => {
 
     useEffect(() => {
         getAllBhajans();
-        
-    }, []);
+    }, [params?.id]);
 
     return (
         <>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4 mb-5">
                 {bhajans.map((bhajan, idx) => (
                     <Link key={idx} to={`/bhajan/${bhajan._id}`}>
                         <div className="lg:w-80 lg:h-80 w-72 h-72 bg-red-600 rounded-xl flex flex-col justify-center items-center">
