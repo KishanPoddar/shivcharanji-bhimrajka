@@ -33,9 +33,9 @@ const GetBhajanByCategory = () => {
                 <div className={`bg-red-300 lg:hidden relative font-medium ${open ? "block rounded-b-lg" : "hidden"}`}>
                     <ul className="flex flex-col items-center">
                         {categoryLinks?.map((category, i) => (
-                            <Link to={category?.link}>
-                                <li onClick={() => {setOpen(false); setCategoryBhajans(category?.name)} } key={i} className={`bhajanCategoryMobile`}>{category?.name}</li>
-                            </Link>
+                            <li onClick={() => {setOpen(false); setCategoryBhajans(category?.name)} } key={i} className={`bhajanCategoryMobile`}>
+                                <Link key={i} to={category?.link}>{category?.name}</Link>
+                            </li>
                         ))}
                     </ul>
                 </div>
@@ -44,7 +44,7 @@ const GetBhajanByCategory = () => {
             <div className="lg:block hidden">
                 <ul className="px-7 ">
                     {categoryLinks?.map((category, i) => (
-                        <Link to={category?.link}>
+                        <Link key={i} to={category?.link}>
                             <li key={i} className={`bhajanCategoryDesktop ${( params.id && params.id === category.id)? "activeLink":""}`}>{category?.name}</li>
                         </Link>
                     ))}

@@ -21,7 +21,7 @@ const Navbar = () => {
                         <RxHamburgerMenu />
                     </div>
                 </div>
-                <div className={`lg:hidden absolute w:1/4 h-screen font-medium top-0 bg-white duration-300 ${open ? "left-0" : "left-[-100%]"}`}>
+                <div className={`lg:hidden absolute w:1/4 h-screen font-medium top-0 bg-white duration-300 z-10 ${open ? "left-0" : "left-[-100%]"}`}>
                     <ul className="flex flex-col items-center my-20 h-full gap-10 py-2 text-lg">
                         {menuLinks?.map((menu, i) => (
                             <li onClick={() => setOpen(false)} key={i} className="px-7 cursor-pointer ">
