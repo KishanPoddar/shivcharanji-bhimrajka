@@ -50,3 +50,12 @@
     box-shadow: inset 0px 0px 20px 10px #e99520a8;
     border-radius: 25px;
 }
+
+.settingsLabel{
+    @apply text-xl mt-5 
+}
+
+.settingsInput{
+    @apply text-gray-500 my-3 h-7 border-none;
+    border-bottom: 1px solid lightgray;
+}

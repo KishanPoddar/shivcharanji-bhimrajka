@@ -40,18 +40,21 @@ const App = () => {
 							<Route path="/login" element={<Login />} />
 							<Route path="/forgot-password" element={<ForgotPassword />} />
 							<Route path="/reset-password/:id" element={<ResetPassword />} />
-							<Route element={<ProtectedRoute />}> {/* User protected routes */}
+							 {/* User protected routes */}
+							{/* <Route element={<ProtectedRoute />}> */}
 								<Route path="/user/update" element={<UpdateUser />} />
 								<Route path="update" element={<UserDetails />} />
-							</Route>
-							<Route path="admin" element={<ProtectedRoute />}> {/* Admin protected routes */}
+							{/* </Route> */}
+							{/* Admin protected routes */}
+							<Route path="admin" element={<ProtectedRoute />}>
 								<Route path="dashboard" element={<AdminDashboard />} />
 								<Route path="all-bhajans" element={<AdminAllBhajans />} />
 								<Route path="bhajan/update/:id" element={<AdminUpdateBhajan />} />
 								<Route path="user/update/:id" element={<AdminUpdateUser />} />
 								<Route path="bhajan/create" element={<AdminCreateBhajan />} />
 							</Route>
-							<Route path="admin" element={<SuperAdminRoute />}> {/* Super admin protected routes */}
+							{/* Super admin protected routes */}
+							<Route path="admin" element={<SuperAdminRoute />}>
 								<Route path="all-users" element={<AdminAllUsers />} /> 
 							</Route>
 						</Routes>
